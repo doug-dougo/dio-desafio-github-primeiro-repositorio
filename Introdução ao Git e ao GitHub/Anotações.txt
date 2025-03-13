@@ -1,7 +1,27 @@
 Link para download do Git:
 O Git Bash é um terminal estendido para otimizar o uso do Git. 
 
-git status 
-git add -a ou git add . - adiciona todos os arquivos
+git status
+
+git add .
+Adiciona todas as alterações (novos arquivos, modificações e deleções) dentro do diretório atual e seus subdiretórios ao stage (área de preparação).Não adiciona arquivos que foram removidos, a menos que você use git rm.
+
+git add *
+Usa a expansão de wildcards (curinga) do shell. Isso significa que:
+Adiciona novos arquivos e modificações no diretório atual.
+Não inclui arquivos deletados (porque eles não aparecem na expansão de *).
+Pode não funcionar corretamente caso existam arquivos ignorados pelo Git ou arquivos que começam com um ponto (.), como .gitignore.
+
+git add -a (ou git add --all)
+Adiciona todas as mudanças (arquivos novos, modificados e deletados) ao stage.
+Esse é o comando mais abrangente e costuma ser a forma mais "segura" de garantir que absolutamente todas as mudanças estão indo para o próximo commit.
+
+Resumo prático:
+Use git add . se quiser adicionar mudanças no diretório atual.
+Use git add * para adicionar arquivos visíveis no shell (cuidado com arquivos ocultos).
+Use git add -a para garantir que todas as mudanças (inclusive deleções) sejam rastreadas.
+Na dúvida, git add -A (ou git add --all) é a opção mais completa! 
+
 git commit -m "comentário sobre o que está sendo feito"
+
 git push origin main - envia todos os commits locais para núvem 
